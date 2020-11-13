@@ -4,6 +4,7 @@ This is a simple implementation to check current weather using <a href="https://
 
 #### Project Quickstart
 Clone repo 
+
 Inside a virtual environment running Python 3:
 - cd <-repo folder->
 - `pip install -r requirement.txt`
