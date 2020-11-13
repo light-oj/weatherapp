@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+
+    <title>Current Weather</title>
+</head>
+<body>
+    <section class="hero is-info">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    What's the weather like in your city? Find out!!!
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-4 is-4">
+                    <form method="POST" action="{% url 'my-search' %}">
+                    {% csrf_token %}
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <input class="input" name="search" type="text" placeholder="City Name">
+                            </div>
+                            <div class="control">
+                                <button type="submit" class="button is-info">
+                                    Check City
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% block content %}
+        
+    {% endblock content %}
+    <footer class="footer">
+    </footer>
+</body>
+</html>
